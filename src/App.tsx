@@ -27,12 +27,13 @@ const App: React.FC = () => {
   }
 
   const toggleHandler = (id: number) => {
-    SetTodos(prev => prev.map(todo => {
+    let a = todos.map(todo => {
       if (todo.id === id) {
-        todo.completed = !todo.completed
+          todo.completed = !todo.completed
       }
       return todo
-    }))
+    })
+    SetTodos([...a])
   }
 
   const removeHandler = (id: number) => {
